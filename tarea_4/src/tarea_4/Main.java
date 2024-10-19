@@ -6,8 +6,23 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Realiza un programa Java que lea los datos de 5 alumnos y los guarde campo a
+ * campo en un fichero binario cuyo nombre (y dirección) se solicitará por
+ * teclado. Cada alumno leído deberá ser guardado antes de solicitar el
+ * siguiente. Para cada alumno se tiene la siguiente información: NIA (entero),
+ * Nombre (String), Apellidos (String), Genero (Char), Fecha de Nacimiento
+ * (Fecha), Ciclo (String), Curso (String), Grupo (String).
+ * 
+ * @author Iñigo Casanova
+ */
+
 public class Main {
 
+	/**
+	 * 
+	 * @param args Argumentos (no usados en este caso).
+	 */
 	public static void main(String[] args) {
 		final int NUMERO_ALUMNOS = 5;
 		Scanner sc = new Scanner(System.in);
@@ -23,6 +38,8 @@ public class Main {
 
 		DataOutputStream dos = null;
 		try {
+			// Usamos DataOutputStream y FileOutputStream para trabajar con ficheros
+			// binarios
 			dos = new DataOutputStream(new FileOutputStream(ruta + "\\" + nombre + ".bin"));
 			for (int i = 0; i < NUMERO_ALUMNOS; i++) {
 				Alumno a = new Alumno();

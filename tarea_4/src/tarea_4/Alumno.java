@@ -6,6 +6,12 @@ import java.util.Date;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/**
+ * Clase Alumno para crear alumnos
+ * 
+ * @author Iñigo Casanova
+ */
+
 public class Alumno {
 
 	private int dni;
@@ -16,10 +22,16 @@ public class Alumno {
 	private String grupo;
 	private char genero;
 	private Date fechaNacimiento;
-
+	
+	/**
+	 * Constructor por defecto
+	 */
+	
 	public Alumno() {
 	}
-
+	
+	// Getters y Setters 
+	
 	public int getDni() {
 		return dni;
 	}
@@ -83,7 +95,14 @@ public class Alumno {
 	public void setFechaNacimiento(Date fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-
+	
+	/**
+	 * Método para solicitar al usuario los datos de un alumno de forma interactiva.
+	 * 
+	 * @param sc Entrada estandar de datos
+	 * @param i  Numero de alumno
+	 */
+	
 	public void pedirDatos(Scanner sc, int i) {
 		boolean fechaValida = false;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
